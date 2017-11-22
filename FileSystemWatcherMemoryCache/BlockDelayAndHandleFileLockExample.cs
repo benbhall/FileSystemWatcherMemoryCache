@@ -42,7 +42,7 @@ namespace FileSystemWatcherMemoryCache
             var watcher = new FileSystemWatcher()
             {
                 Path = demoFolderPath,
-                NotifyFilter = NotifyFilters.LastWrite,
+                NotifyFilter = NotifyFilters.FileName,
                 Filter = "*.txt"
             };
 
@@ -51,7 +51,7 @@ namespace FileSystemWatcherMemoryCache
                 RemovedCallback = OnRemovedFromCache
             };
 
-            watcher.Changed += OnChanged;
+            watcher.Created += OnCreated;
             watcher.EnableRaisingEvents = true;
 
             Console.WriteLine($"Watching for writes to text files in folder: {demoFolderPath}");
@@ -81,7 +81,7 @@ namespace FileSystemWatcherMemoryCache
         }
 
         // Add file event to cache (won't add if already there so assured of only one occurance)
-        private void OnChanged(object source, FileSystemEventArgs e)
+        private void OnCreated(object source, FileSystemEventArgs e)
         {
             _cacheItemPolicy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(CacheTimeSeconds);
 
