@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ExampleFileCreatedFiringTwice.cs" />
     <Compile Include="ExampleAttributesChangedFiringTwice.cs" />
+    <Compile Include="SimpleBlockAndDelayExample - Copy.cs" />
     <Compile Include="SimpleBlockAndDelayExample.cs" />
     <Compile Include="ExampleFuncIn.cs" />
     <Compile Include="BlockDelayAndHandleFileLockExample.cs" />
