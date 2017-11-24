@@ -2,7 +2,7 @@
 
 Lightweight example of using MemoryCache to solve the common OS/application problem with FileSystemWatcher events firing twice.
 
-With some occurrences, we can safely take the final event e.g. with a NotifyFilters.LastWrite, it will fire one when the change is made and then again when the file has finished saving  - easy to recreate when editing a huge file. However, MS identify a broader issue and I wnated to explore a more predictable solution.
+With some occurrences, we can safely take the final event e.g. with a NotifyFilters.LastWrite, it will fire one when the change is made and then again when the file has finished saving  - easy to recreate when editing a huge file. However, MS identify a broader issue and I wanted to explore a more predictable solution.
 
 Change the demoPath folder location (or create it). Instantiate the class, drop a file in the folder and watch the console.
 
